@@ -1,0 +1,37 @@
+---
+title: About
+description: About the site
+---
+
+Since its July 14, 2022 launch to the space station, the EMIT hyperspectral visible/short-wave infrared sensor has been extremely useful!
+
+## Consent
+
+EMIT uses an advanced imaging spectrometer instrument that measures a spectrum for every point in the image. 
+Sunlight reflected from minerals on the Earth’s surface is imaged by a telescope and spectrometer system onto a detector area array that is sensitive from the visible to short wavelength infrared portion of the electromagnetic spectrum. 
+The EMIT dust source minerals have distinct spectral signatures in this wavelength range. 
+
+Each column of the detector array records the spectrum for a sample of 1240 cross-track EMIT instrument swath. 
+The along-track dimension of the image is built up with the forward motion of the ISS. 
+The imaging spectrometer measured image cubes are calibrated to spectral radiance, then atmospherically corrected and analyzed to determine the mineral composition that is required to achieve the EMIT science objectives.
+
+## Information we collect
+
+Currently a powerful tool already available is MMGIS, which can create multi-layers, display polygons and assign metadata.
+
+MMGIS already has an EMIT mission, we carried out searches and studies on it.
+
+More details in our git: https://github.com/andresinho20049/MMGIS
+
+And making a get request to the following endpoint:
+`https://{HOST_MMGIS}/api/configure/get?mission={MISSION_NAME}`
+
+The settings used are returned, including Layers settings.
+
+Params can also be added.
+`&full=true`
+
+## How we use your Information
+
+Let us amalgamate the data from the tables into a unified dataframe. By representing the coordinates in the (n, 2) structure, we can leverage numpy to execute the requisite statistical analyses. Our objective is to chart the methane plume and authenticate its temporal and spatial characteristics. Subsequently, 
+we will feed the data into a machine learning algorithm to generate forecasts based on the available information.

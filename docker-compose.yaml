@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mmgis_article:
+    build: .
+    profiles: ['']
+    ports:
+      - 3000:3000
+    networks:
+      - mmgis_article-network
+  
+  mmgis_article_dev:
+    user: root
+    build: 
+      dockerfile: ./Dockerfile
+      target: 'development'
+    profiles: ['development']
+    entrypoint: ['./entrypoint-init-dev.sh']
+    ports:
+      - 3000:3000
+    volumes:
+      - type: bind
+        source: ./src
+        target: /opt/app/src
+      - type: bind
+        source: ./package.json
+        target: /opt/app/package.json
+      - type: bind
+        source: ./package-lock.json
+        target: /opt/app/package-lock.json
+      - type: bind
+        source: ./node_modules
+        target: /opt/app/node_modules
+    networks:
+      - mmgis_article-network
+
+volumes:
+  mmgis_article-data:
+
+networks:
+  mmgis_article-network:
+    
