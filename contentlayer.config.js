@@ -12,9 +12,9 @@ const computedFields = {
   },
 }
 
-export const Page = defineDocumentType(() => ({
-  name: "Page",
-  filePathPattern: `pages/**/*.mdx`,
+export const Posts = defineDocumentType(() => ({
+  name: "Posts",
+  filePathPattern: `posts/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -26,11 +26,11 @@ export const Page = defineDocumentType(() => ({
     },
   },
   computedFields,
-}))
+}));
 
-export const Post = defineDocumentType(() => ({
-  name: "Post",
-  filePathPattern: `posts/**/*.mdx`,
+export const Stories = defineDocumentType(() => ({
+  name: "stories",
+  filePathPattern: `stories/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -50,5 +50,5 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Post, Page],
-})
+  documentTypes: [Posts, Stories],
+});

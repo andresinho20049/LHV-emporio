@@ -10,7 +10,7 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm duration-500 text-secondary-500 hover:text-secondary-100"
+              className="text-sm duration-500 text-primary-500 hover:text-secondary-100"
             >
               {item.name}
             </Link>
@@ -20,15 +20,13 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
       <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        EMIT
+        LHV Empório
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500 ">
-          Welcome,
-          our challenge is to develop an application that can help raise awareness in the community about what EMIT is,
-          how it can be used and what has already been done with its data.
+          Outfit valioso é na LHV Empório, estamos sempre atualizando e aqui você pode nos acompanhar, seguir as melhores tendencias e adquirir seu look.
         </h2>
       </div>
     </div>

@@ -134,11 +134,8 @@ It would be worthwhile to peruse the articles and other compelling content that 
 ## Considerations
 I would like to convey my heartfelt appreciation to the entire team for their dedication. It is because of their efforts that we were able to conduct thorough research, analyze the data, write the article, and devise effective solutions. Their hard work and commitment are truly commendable.
 
-> **Project**: EMIT Articles \
+> **Project**: LHV Emporio \
 > **Team**: 
 > - André (Developer)
-> - Andrey (Web Developer)
-> - Welber (Data analysis)
-> - Guilherme (Research)
 >
-> **Delivery**: 08/10/2023 (dd/MM/yyyy)
+> **Delivery**: 13/01/2024 (dd/MM/yyyy)
