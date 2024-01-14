@@ -1,11 +1,11 @@
-export const LinksNavigation:ILinkNav[] = [
-	{ name: "Articles", href: "/articles" },
-	{ name: "Colaboratory", href: "/colaboratory" },
-	// { name: "Contact", href: "/contact" },
-	{ name: "About", href: "/about" },
-  ];
-  
-  interface ILinkNav {
-	name: string;
-	href: string;
-  }
+export const LinksNavigation: ILinkNav[] = [
+  { name: "Loja", href: "/loja" },
+  { name: "Blog", href: "/blog" },
+  { name: "Outfit do Dia", href: "/ootd" },
+  { name: "Sobre", href: "/sobre" },
+];
+
+interface ILinkNav {
+  name: string;
+  href: string;
+}
