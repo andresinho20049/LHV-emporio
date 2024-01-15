@@ -10,12 +10,10 @@ export default function Loja() {
   ];
 
   return (
-    <section>
+    <section className="container m-auto">
       <CarouselComponent imgs={imgs} />
 
-      <div className="grid justify-items-center my-4 md:my-6">
-        <CategoryGroup />
-      </div>
+      <CategoryGroup />
 
       <ShowProducts />
     </section>

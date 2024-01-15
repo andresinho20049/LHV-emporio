@@ -2,7 +2,6 @@
 
 import { categories } from "@/interface/IProduto";
 import { Button, ButtonGroup } from "flowbite-react";
-import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
@@ -22,21 +21,30 @@ export const CategoryGroup = () => {
   );
 
   return (
-    <ButtonGroup>
-      {categories.map((category, idx) => (
-        <Button
-          key={idx}
-          color="gray"
-          onClick={() => {
-            // <pathname>?sort=asc
-            router.push(pathname + "?" + createQueryString("category", category), {
-                scroll: false
-            });
-          }}
-        >
-          {category}
-        </Button>
-      ))}
-    </ButtonGroup>
+    <div className="flex justify-center my-6 ">
+      <ButtonGroup
+        className="grid md:grid-flow-col grid-cols-3 md:auto-cols-max"
+        outline
+      >
+        {categories.map((category, idx) => (
+          <Button
+            key={idx}
+            color="gray"
+            className="rounded-lg m-2 md:m-0 md:rounded-none"
+            onClick={() => {
+              // <pathname>?sort=asc
+              router.push(
+                pathname + "?" + createQueryString("category", category),
+                {
+                  scroll: false,
+                }
+              );
+            }}
+          >
+            {category}
+          </Button>
+        ))}
+      </ButtonGroup>
+    </div>
   );
 };
