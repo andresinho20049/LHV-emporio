@@ -1,13 +1,13 @@
 "use client";
 
+import { categories } from "@/interface/IProduto";
 import { LinksNavigation } from "@/utils/LinksNavigation";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "../iteraction/mode-toggle";
 import { BsCart } from "react-icons/bs";
+import { ModeToggle } from "../iteraction/mode-toggle";
 
 export const HeaderNav = () => {
-
   const pathname = usePathname();
 
   return (
@@ -41,7 +41,7 @@ export const HeaderNav = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              @emporiolhv
+                @emporiolhv
               </a>
             </span>
           </Dropdown.Header>
@@ -50,13 +50,13 @@ export const HeaderNav = () => {
           </Dropdown.Item>
           <Dropdown.Item>Carrinho</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item href="/">Tênis</Dropdown.Item>
-          <Dropdown.Item href="/">Camisa</Dropdown.Item>
-          <Dropdown.Item href="/">Calça</Dropdown.Item>
-          <Dropdown.Item href="/">Bermuda</Dropdown.Item>
-          <Dropdown.Item href="/">Boné</Dropdown.Item>
-          <Dropdown.Item href="/">Relógio</Dropdown.Item>
-          <Dropdown.Item href="/">Conjuntos</Dropdown.Item>
+
+          {categories.map((category) => (
+            <Dropdown.Item key={category} href={`/loja?category=${category}`}>
+              {category}
+            </Dropdown.Item>
+          ))}
+
           <Dropdown.Divider />
           <Dropdown.Item>Contato</Dropdown.Item>
         </Dropdown>
@@ -75,4 +75,4 @@ export const HeaderNav = () => {
       </Navbar.Collapse>
     </Navbar>
   );
-}
+};

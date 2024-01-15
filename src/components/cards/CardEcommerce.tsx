@@ -1,35 +1,34 @@
-import { Card } from "flowbite-react";
+import { IProduto } from "@/interface/IProduto";
+import { CurrencyNumber } from "@/utils/CurrencyNumber";
+import { Card, Carousel } from "flowbite-react";
+import Image from "next/image";
 import { BsCartPlus } from "react-icons/bs";
 
-interface ICardEcommerceProps {
-  img: string;
-  title: string;
-  valor: number;
-}
-
 export const CardEcommerce = ({
-    img,
-    title,
-    valor
-}: ICardEcommerceProps) => {
-
-    let USDollar = new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
-
+  name,
+  description,
+  category,
+  value,
+  photo,
+}: IProduto) => {
   return (
-    <Card
-      className="max-w-sm"
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={`/img/${img}`}
-    >
-      <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
-        {title}
+    <Card className="max-w-sm">
+      <div className="cols-span-2 h-96 w-full">
+        <Carousel slide={false}>
+          {photo.map((photo, idx) => (
+            <Image key={idx} src={photo.url} width={500} height={760} alt={photo.title} />
+          ))}
+        </Carousel>
+      </div>
+      <h5 className="text-md font-mono font-semibold tracking-tight text-gray-900 dark:text-white">
+        {name}
       </h5>
+      <p className="text-sm font-mono tracking-widest text-black dark:text-white">
+        {description}
+      </p>
       <div className="flex items-center justify-between">
-        <span className="text-2xl font-bold text-gray-900 dark:text-white">
-          {USDollar.format(valor)}
+        <span className="text-2xl font-mono font-bold text-gray-900 dark:text-white">
+          {CurrencyNumber.format(value)}
         </span>
         <BsCartPlus />
       </div>

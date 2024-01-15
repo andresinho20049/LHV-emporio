@@ -1,6 +1,6 @@
-import { CardEcommerce } from "@/components/cards/CardEcommerce";
+import { ShowProducts } from "@/components/cards/ShowProducts";
 import { CarouselComponent } from "@/components/carousel/CarouselComponent";
-import { AdsenseComponentImageOnly } from "@/components/google/AdsenseComponent";
+import { CategoryGroup } from "@/components/iteraction/CategoryGroup";
 
 export default function Loja() {
   const imgs = [
@@ -10,22 +10,14 @@ export default function Loja() {
   ];
 
   return (
-    <>
+    <section>
       <CarouselComponent imgs={imgs} />
 
-      <AdsenseComponentImageOnly />
+      <div className="grid justify-items-center my-4 md:my-6">
+        <CategoryGroup />
+      </div>
 
-    <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4">
-
-      {[1, 2].map((value) => (
-          <CardEcommerce 
-          key={value} 
-          img="tenis_2.png"
-          title="Tênis Nike Shox"
-          valor={500.50}
-          />
-          ))}
-          </div>
-    </>
+      <ShowProducts />
+    </section>
   );
 }

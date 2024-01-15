@@ -2,13 +2,11 @@ import {
   Avatar,
   Footer,
   FooterDivider,
-  FooterIcon,
   FooterLink,
   FooterLinkGroup,
-  FooterTitle,
+  FooterTitle
 } from "flowbite-react";
 import { FooterCopyWriter } from "./Copywriting";
-import { BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { SocialMediaComponent } from "./SocialMedia";
 
 export const FooterComponent = () => {
@@ -39,8 +37,12 @@ export const FooterComponent = () => {
             <div>
               <FooterTitle title="Compliance" />
               <FooterLinkGroup col>
-                <FooterLink href="#">Politicas de privacidade</FooterLink>
-                <FooterLink href="#">Termos &amp; Condições</FooterLink>
+                <FooterLink href="https://github.com/andresinho20049/LHV-emporio/security/policy">
+                  Politicas de privacidade
+                </FooterLink>
+                <FooterLink href="https://github.com/andresinho20049/LHV-emporio/tree/master?tab=BSD-3-Clause-1-ov-file#readme">
+                  Termos &amp; Condições
+                </FooterLink>
               </FooterLinkGroup>
             </div>
           </div>

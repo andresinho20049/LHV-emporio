@@ -17,6 +17,7 @@ export const AdsenseComponent = ({ slot }: IAdsenseComponentProps) => {
       ></ins>
       <Script
         id="ads-google-2"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
         }}

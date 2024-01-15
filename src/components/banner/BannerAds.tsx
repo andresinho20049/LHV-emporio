@@ -1,19 +1,14 @@
 import { Banner, BannerCollapseButton } from "flowbite-react";
-import { title } from "process";
 import { HiX } from "react-icons/hi";
 import { MdAnnouncement } from "react-icons/md";
 
 export interface IBannerAdsProps {
-    text: string;
-    link_text: string;
-    link_url: string;
+  text: string;
+  link_text: string;
+  link_url: string;
 }
 
-export const BannerAds = ({
-    text,
-    link_text,
-    link_url
-}: IBannerAdsProps) => {
+export const BannerAds = ({ text, link_text, link_url }: IBannerAdsProps) => {
   return (
     <Banner>
       <div className="flex w-full justify-between border-b border-neutral-200 bg-neutral-100 my-4 p-4 dark:border-neutral-600 dark:bg-neutral-700">
@@ -41,4 +36,4 @@ export const BannerAds = ({
       </div>
     </Banner>
   );
-}
+};
