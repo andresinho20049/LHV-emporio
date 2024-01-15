@@ -3,12 +3,13 @@
 import { categories } from "@/interface/IProduto";
 import { LinksNavigation } from "@/utils/LinksNavigation";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { BsCart } from "react-icons/bs";
 import { ModeToggle } from "../iteraction/mode-toggle";
 
 export const HeaderNav = () => {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <Navbar rounded className="bg-primary-200">
@@ -52,7 +53,12 @@ export const HeaderNav = () => {
           <Dropdown.Divider />
 
           {categories.map((category) => (
-            <Dropdown.Item key={category} href={`/loja?category=${category}`}>
+            <Dropdown.Item
+              key={category}
+              onClick={() => {
+                router.push(`/loja?category=${category}`);
+              }}
+            >
               {category}
             </Dropdown.Item>
           ))}
@@ -66,7 +72,10 @@ export const HeaderNav = () => {
         {LinksNavigation.map((item) => (
           <Navbar.Link
             key={item.href}
-            href={item.href}
+            onClick={() => {
+              router.push(item.href);
+            }}
+            className="cursor-pointer"
             active={item.href === pathname}
           >
             {item.name}

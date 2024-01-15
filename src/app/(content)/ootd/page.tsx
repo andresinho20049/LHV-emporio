@@ -6,7 +6,7 @@ export default function Home() {
     <div className="prose dark:prose-invert">
       {allStories.map((post) => (
         <article key={post._id}>
-          <Link href={post.slug}>
+          <Link href={`ootd/${post.slug.split('/').pop()}`}>
             <h2>{post.title}</h2>
           </Link>
           {post.description && <p>{post.description}</p>}

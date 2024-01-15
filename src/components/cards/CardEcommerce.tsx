@@ -13,7 +13,7 @@ export const CardEcommerce = ({
 }: IProduto) => {
   return (
     <Card className="max-w-sm">
-      <div className="cols-span-2 h-96 w-full">
+      <div className="cols-span-2 h-48 md:h-96 w-full">
         <Carousel slide={false}>
           {photo.map((photo, idx) => (
             <Image key={idx} src={photo.url} width={500} height={760} alt={photo.title} />
@@ -27,7 +27,7 @@ export const CardEcommerce = ({
         {description}
       </p>
       <div className="flex items-center justify-between">
-        <span className="text-2xl font-mono font-bold text-gray-900 dark:text-white">
+        <span className="text-sm md:text-2xl font-mono font-bold text-gray-900 dark:text-white">
           {CurrencyNumber.format(value)}
         </span>
         <BsCartPlus />
