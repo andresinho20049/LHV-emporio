@@ -1,14 +1,20 @@
-'use client'
+"use client";
 
 import { useCarrinhoContext } from "@/context/CarrinhoContext";
 import { IPedido } from "@/interface/IProduto";
 import { Button, Card, Label, TextInput } from "flowbite-react";
 import Image from "next/image";
-import { ChangeEvent, ChangeEventHandler, useCallback, useMemo, useState } from "react";
+import {
+  ChangeEvent,
+  ChangeEventHandler,
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
 
 export const ResumoPedido = () => {
-    const copied = "Link copiado";
-    const notCopied = "Copiar Link";
+  const copied = "Link copiado";
+  const notCopied = "Copiar Link";
 
   const { carrinho, total } = useCarrinhoContext();
   const [state, setState] = useState(notCopied);
@@ -17,12 +23,12 @@ export const ResumoPedido = () => {
     name: "",
     obs: "",
     carrinho: carrinho,
-    total: total
-  })
+    total: total,
+  });
 
   const changeName = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setPedido(p => {
-      return {...p, name: e.target.value}
+    setPedido((p) => {
+      return { ...p, name: e.target.value };
     });
   }, []);
 
@@ -33,27 +39,24 @@ export const ResumoPedido = () => {
   }, []);
 
   useMemo(() => {
-    setPedido(p => {
-      return {...p, carrinho: carrinho, total: total }
-    })
-  }, [carrinho, total])
-
+    setPedido((p) => {
+      return { ...p, carrinho: carrinho, total: total };
+    });
+  }, [carrinho, total]);
 
   const handleClick = useCallback(() => {
-
     const pedidoJson = JSON.stringify(pedido);
     const paramPedido = Buffer.from(pedidoJson).toString("base64");
 
-    navigator.clipboard.writeText(
-      `https://emporiolhv.vercel.app/cart?pedido=${paramPedido}`
-    );
-
-    setState(copied);
-
-    setTimeout(() => {
-        setState(notCopied);
-    }, 2000)
-
+    navigator.clipboard
+      .writeText(`https://emporiolhv.vercel.app/cart?pedido=${paramPedido}`)
+      .then(() => setState(copied))
+      .catch(() => setState("Não permitido!"))
+      .finally(() => {
+        setTimeout(() => {
+          setState(notCopied);
+        }, 2000);
+      });
   }, [pedido]);
 
   return (

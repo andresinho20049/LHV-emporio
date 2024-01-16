@@ -13,10 +13,10 @@ export default function CartPage() {
   const content = Buffer.from(b64Encoded, "base64").toString();
 
   const [pedido, setPedido] = useState<IPedido>({
-    name: "Error",
+    name: "Pedido não encontrado",
     carrinho: [],
     total: 0,
-    obs: "",
+    obs: "Favor validar se o link esta correto, não reconhecemos o seu pedido",
   });
 
   useEffect(() => {
