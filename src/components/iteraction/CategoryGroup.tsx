@@ -2,23 +2,10 @@
 
 import { categories } from "@/interface/IProduto";
 import { Button, ButtonGroup } from "flowbite-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 export const CategoryGroup = () => {
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
 
   return (
     <div className="flex justify-center my-6 ">
@@ -32,14 +19,8 @@ export const CategoryGroup = () => {
             color="gray"
             className="rounded-lg m-2 md:m-0 md:rounded-none"
             onClick={() => {
-              // <pathname>?sort=asc
-              router.push(
-                pathname + "?" + createQueryString("category", category),
-                {
-                  scroll: false,
-                }
-              );
-            }}
+              router.push(`/loja?category=${category}`, {scroll:false})
+             }}
           >
             {category}
           </Button>

@@ -11,6 +11,12 @@ export const HeaderNav = () => {
   const pathname = usePathname();
   const router = useRouter();
 
+  const routerCar = () => {
+    router.push("/carrinho", {
+      scroll: false,
+    });
+  };
+
   return (
     <Navbar rounded className="bg-primary-200">
       <Navbar.Brand href="/" className="order-2 md:order-1">
@@ -22,7 +28,10 @@ export const HeaderNav = () => {
         <div className="order-none hidden md:flex md:order-first">
           <ModeToggle />
         </div>
-        <BsCart className="order-2 md:order-first" />
+        <BsCart
+          className="order-2 md:order-first cursor-pointer"
+          onClick={routerCar}
+        />
         <Dropdown
           arrowIcon={false}
           inline
@@ -49,7 +58,7 @@ export const HeaderNav = () => {
           <Dropdown.Item className="md:order-none md:hidden flex order-first">
             <ModeToggle />
           </Dropdown.Item>
-          <Dropdown.Item>Carrinho</Dropdown.Item>
+          <Dropdown.Item onClick={routerCar}>Carrinho</Dropdown.Item>
           <Dropdown.Divider />
 
           {categories.map((category) => (
@@ -62,9 +71,6 @@ export const HeaderNav = () => {
               {category}
             </Dropdown.Item>
           ))}
-
-          <Dropdown.Divider />
-          <Dropdown.Item>Contato</Dropdown.Item>
         </Dropdown>
       </div>
       <Navbar.Toggle className="order-3" />

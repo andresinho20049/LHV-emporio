@@ -10,7 +10,7 @@ export default function Loja() {
   ];
 
   return (
-    <section className="container m-auto">
+    <section>
       <CarouselComponent imgs={imgs} />
 
       <CategoryGroup />

@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { allStories } from "contentlayer/generated"
 
 import { Mdx } from "@/components/structure/mdx-components"
+import Image from "next/image"
 
 interface PageProps {
   params: {
@@ -50,11 +51,14 @@ export default async function PagePage({ params }: PageProps) {
   }
 
   return (
-    <article className="py-6 prose dark:prose-invert">
-      <h1>{page.title}</h1>
-      {page.description && <p className="text-xl">{page.description}</p>}
-      <hr />
-      <Mdx code={page.body.code} />
+    <article className="flex flex-col justify-start items-center">
+      <div className="py-6 prose dark:prose-invert">
+        <h1>{page.title}</h1>
+        {page.description && <p className="text-xl">{page.description}</p>}
+        <hr />
+        <Image alt="Modelo" src={page.imgSrc} width={1080} height={1920} />
+        <Mdx code={page.body.code} />
+      </div>
     </article>
-  )
+  );
 }
