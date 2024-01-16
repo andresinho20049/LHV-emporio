@@ -1,8 +1,9 @@
-import { CategoryType, IProduto } from "@/interface/IProduto";
+import { IProduto } from "@/interface/IProduto";
 
 
 const products: IProduto[] = [
   {
+    idPrd: 1,
     name: "Kenner Infantil",
     description: "Tam - 25/26 ao 37/38",
     category: "Chinelo",
@@ -26,6 +27,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 2,
     name: "Nike Air Max",
     description: "Air Max linha tenis feminino",
     category: "Tenis",
@@ -39,6 +41,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 3,
     name: "Air Max TN plus",
     description: "TAM - 38 ao 43",
     category: "Tenis",
@@ -62,6 +65,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 4,
     name: "Air Max TN plus 3.0",
     description: "TAM - 38 ao 43",
     category: "Tenis",
@@ -95,6 +99,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 5,
     name: "Mizuno Ls",
     description: "TAM - 38 ao 43",
     category: "Tenis",
@@ -118,6 +123,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 6,
     name: "Corta Vento Nike",
     description: "Corta vento impermeavel",
     category: "Blusa",
@@ -136,6 +142,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 7,
     name: "Camisa Time",
     description: "Linha camisas de Time, liga italiana",
     category: "Camisa",
@@ -148,8 +155,9 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 8,
     name: "Camisa Real Madrid",
-    description: "Ultra pedida, LaLiga -> Camisa Real",
+    description: "Ultra pedid, LaLiga -> Camisa Real",
     category: "Camisa",
     value: 140.0,
     photo: [
@@ -161,6 +169,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 9,
     name: "Camisa Lacoste",
     description: "Tamanho - M, G, GG",
     category: "Camisa",
@@ -184,6 +193,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 10,
     name: "Relogio",
     description: "Hugo Boss",
     category: "Relogio",
@@ -197,6 +207,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 11,
     name: "Relogio",
     description: "Hilfiger",
     category: "Relogio",
@@ -210,6 +221,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 12,
     name: "Calça Moleton",
     description: "Tamanhos - M, G, GG",
     category: "Calça",
@@ -222,6 +234,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 13,
     name: "Juliet",
     description: "Lupa pra cada dia",
     category: "Lupa",
@@ -238,6 +251,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 14,
     name: "Juliet",
     description: "Juliet, Romeo 2 x metal, Juliet com a lente ruby",
     category: "Lupa",
@@ -254,6 +268,7 @@ const products: IProduto[] = [
     ],
   },
   {
+    idPrd: 15,
     name: "Polo Lacoste",
     description: "Tamanho - P, M, G, GG",
     category: "Camisa",
@@ -273,6 +288,23 @@ const products: IProduto[] = [
         title: "Polo Lala",
         url: "/img/camisa_8.png",
         cor: "Vermelho",
+      },
+    ],
+  },
+  {
+    idPrd: 16,
+    name: "CAP Hugo Boss",
+    description: "Linha Hugo Boss, adquira seu cap exclusivo",
+    category: "Bone",
+    value: 45.0,
+    photo: [
+      {
+        title: "Hugo Boss",
+        url: "/img/bones_2.png",
+      },
+      {
+        title: "Cap HB",
+        url: "/img/bones_3.png",
       },
     ],
   },
