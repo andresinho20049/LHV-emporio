@@ -29,12 +29,16 @@ export default function LayoutArticle({ children }: ILayoutProps) {
   const showAds = isMagalu ? magaluAds : shopeeAds;
 
   return (
-    <section className="grid grid-flow-row justify-stretch h-screen ">
+    <section className="flex flex-col justify-between h-screen">
       <header className="flex-none">
         <HeaderNav />
-        <BannerAds text={showAds.text} link_text={showAds.link_text} link_url={showAds.link_url} />
+        <BannerAds
+          text={showAds.text}
+          link_text={showAds.link_text}
+          link_url={showAds.link_url}
+        />
       </header>
-      <main className="shrink-0 h-dvh h-full md:container justify-items-center md:mx-auto md:px-2 px-4 py-4">
+      <main className="md:container justify-items-center my-auto md:mx-auto md:px-2 px-4 py-4 grow min-h-full">
         {children}
       </main>
       <AdsenseComponent />

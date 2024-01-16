@@ -6,7 +6,7 @@ interface IAdsenseComponentProps {
 
 export const AdsenseComponent = ({ slot }: IAdsenseComponentProps) => {
   return (
-    <div className="container m-auto h-1/4 justify-items-stretch my-4">
+    <div className="container m-auto h-1/4 my-4">
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
