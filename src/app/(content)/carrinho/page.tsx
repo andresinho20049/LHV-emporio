@@ -8,7 +8,7 @@ import { Card } from "flowbite-react";
 export default function Carrinho() {
   return (
     <section className="grid grid-flow-row auto-rows-max gap-8">
-      <div className="grid grid-cols-2 justify-stretch gap-4">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-4">
         <ShowCartContext />
         <ResumoPedido />
       </div>

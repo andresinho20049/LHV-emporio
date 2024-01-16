@@ -50,21 +50,21 @@ export const CardEcommerce = (prd: IProduto) => {
           ))}
         </Carousel>
       </div>
-      <h5 className="text-md font-mono font-semibold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="text-sm font-mono font-semibold tracking-tight text-gray-900 dark:text-white">
         {name}
       </h5>
-      <div className="text-sm font-mono tracking-widest text-black dark:text-white">
+      <div className="text-xs font-mono tracking-widest text-black dark:text-white">
         {description}
       </div>
-      <div className="flex items-center justify-between">
-        <span className="text-sm md:text-2xl font-mono font-bold text-gray-900 dark:text-white">
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-xs md:text-2xl font-mono font-bold text-gray-900 dark:text-white">
           {CurrencyNumber.format(value)}
         </span>
         {prd.hasCart ? (
           <Button onClick={cartRemoveAction} color="secondary">
             <BsCartCheck />
           </Button>
-        ): (
+        ) : (
           <Button onClick={cartPlusAction}>
             <BsCartPlus />
           </Button>
