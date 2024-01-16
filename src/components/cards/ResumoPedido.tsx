@@ -45,7 +45,7 @@ export const ResumoPedido = () => {
     const paramPedido = Buffer.from(pedidoJson).toString("base64");
 
     navigator.clipboard.writeText(
-      `http://localhost:3000/cart?pedido=${paramPedido}`
+      `https://emporiolhv.vercel.app/cart?pedido=${paramPedido}`
     );
 
     setState(copied);
