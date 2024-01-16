@@ -29,7 +29,7 @@ export const Posts = defineDocumentType(() => ({
 }));
 
 export const Stories = defineDocumentType(() => ({
-  name: "stories",
+  name: "Stories",
   filePathPattern: `stories/**/*.mdx`,
   contentType: "mdx",
   fields: {
@@ -44,9 +44,13 @@ export const Stories = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    imgSrc: {
+      type: "string",
+      default: "/img/model_1.png",
+    },
   },
   computedFields,
-}))
+}));
 
 export default makeSource({
   contentDirPath: "./src/content",
