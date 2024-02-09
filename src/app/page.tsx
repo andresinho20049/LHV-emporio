@@ -14,11 +14,11 @@ export default function Home() {
             </h1>
             <div className="h-2 w-24 bg-primary-700 animate-title" />
             <p className="my-6 text-white animate-fade-in">
-              Outfit valioso é na LHV Empório, estamos sempre atualizando e aqui
+              Outfit valioso é na Empório LHV, estamos sempre atualizando e aqui
               você pode nos acompanhar, seguir as melhores tendencias e adquirir
               seu look.
             </p>
-            <div className="flex justify-center space-x-5">
+            <div className="flex justify-center space-x-5 animate-fade-in">
               <Link
                 href={
                   "https://www.instagram.com/emporiolhv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -37,7 +37,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="order-first md:order-last flex h-48 md:h-full w-full md:w-6/12 justify-center items-center">
+          <div className="order-first md:order-last flex h-48 md:h-full w-full md:w-6/12 justify-center items-center animate-fade-in">
             <Image
               src="/Logo_t.png"
               alt=""
