@@ -29,7 +29,7 @@ export default function LayoutArticle({ children }: ILayoutProps) {
   const showAds = isMagalu ? magaluAds : shopeeAds;
 
   return (
-    <section className="flex flex-col justify-between h-screen">
+    <section className="flex flex-col justify-between min-h-screen">
       <header className="flex-none">
         <HeaderNav />
         <BannerAds
@@ -41,7 +41,6 @@ export default function LayoutArticle({ children }: ILayoutProps) {
       <main className="md:container justify-items-center my-auto md:mx-auto md:px-2 px-4 py-4 grow min-h-full">
         {children}
       </main>
-      <AdsenseComponent />
       <footer className="flex-none mt-auto">
         <FooterComponent />
       </footer>

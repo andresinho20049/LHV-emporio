@@ -1,33 +1,52 @@
-import { LinksNavigation } from "@/utils/LinksNavigation";
+import Image from "next/image";
 import Link from "next/link";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoEnter } from "react-icons/io5";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center justify-center gap-10">
-          {LinksNavigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm duration-500 text-primary-500 hover:text-secondary-100"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </ul>
-      </nav>
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-
-      <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        LHV Empório
-      </h1>
-
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm text-zinc-500 ">
-          Outfit valioso é na LHV Empório, estamos sempre atualizando e aqui você pode nos acompanhar, seguir as melhores tendencias e adquirir seu look.
-        </h2>
+    <div>
+      <div className="flex h-screen items-center justify-center bg-gray-900 p-5">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:px-10">
+          <div className="md:order-first order-last">
+            <h1 className="mb-2 text-3xl lg:text-5xl font-bold text-white animate-title">
+              Empório <span className="text-primary-700">LHV</span>
+            </h1>
+            <div className="h-2 w-24 bg-primary-700 animate-title" />
+            <p className="my-6 text-white animate-fade-in">
+              Outfit valioso é na Empório LHV, estamos sempre atualizando e aqui
+              você pode nos acompanhar, seguir as melhores tendencias e adquirir
+              seu look.
+            </p>
+            <div className="flex justify-center space-x-5 animate-fade-in">
+              <Link
+                href={
+                  "https://www.instagram.com/emporiolhv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                }
+                className="flex w-full items-center justify-center gap-1 rounded-2xl border-2 border-secondary-700 p-5 py-3 font-semibold text-white hover:bg-secondary-700"
+              >
+                Follow us
+                <IoMdHeartEmpty />
+              </Link>
+              <Link
+                href={"/loja"}
+                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary-500 hover:bg-primary-700 p-5 py-3 font-semibold"
+              >
+                Continue
+                <IoEnter />
+              </Link>
+            </div>
+          </div>
+          <div className="order-first md:order-last flex h-48 md:h-full w-full md:w-6/12 justify-center items-center animate-fade-in">
+            <Image
+              src="/Logo_t.png"
+              alt=""
+              className="object-cover h-[12rem] w-[12rem] lg:h-[36rem] lg:w-[36rem] bg-white hover:bg-white/70 hover:animate-pulse rounded-full"
+              width={840}
+              height={595}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

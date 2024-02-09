@@ -12,7 +12,7 @@ export const SocialMediaComponent = () => {
         ariaLabel="Instagram"
       />
       <FooterIcon
-        href="https://w.app/lhv"
+        href="https://api.whatsapp.com/send?phone=5511996910147"
         target="_blank"
         rel="noopener noreferrer"
         icon={BsWhatsapp}

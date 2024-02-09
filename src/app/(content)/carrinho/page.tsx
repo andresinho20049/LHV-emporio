@@ -1,5 +1,3 @@
-'use client'
-
 import { ShowCartContext } from "@/components/cards/ListCard";
 import { ListRecommended } from "@/components/cards/ListReccomended";
 import { ResumoPedido } from "@/components/cards/ResumoPedido";
@@ -7,7 +5,7 @@ import { Card } from "flowbite-react";
 
 export default function Carrinho() {
   return (
-    <section className="grid grid-flow-row auto-rows-max gap-8">
+    <section className="flex flex-col gap-8">
       <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-4">
         <ShowCartContext />
         <ResumoPedido />
